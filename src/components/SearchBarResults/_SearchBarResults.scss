@@ -1,4 +1,4 @@
-@import '../../_index.scss';
+
 .filtered-result-list{
       
      width:100%;
@@ -9,17 +9,12 @@
      border-radius:10px;
      overflow-y:scroll;
      margin-top:0.5rem;
-     
+     max-height:50vh;
 
      div{
-           display:flex;
-           gap:1rem;
-           padding:10px 20px;
-
-           &:hover{
-               background-color:#efefef;
-           }
-          
+        display:flex;
+        gap:1rem;
+        padding:10px 20px;
      }
 
 }

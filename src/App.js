@@ -5,12 +5,12 @@ import SearchBarResults from './components/SearchBarResults/SearchBarResults';
 export default function App(){
 
    const [filteredData , setFilteredData] = useState([]);
-   
-     return(
-       <div className="App">
+   const [inputData ,    setInputData] = useState([]);
+   return(
+       <div className="App" onClick={() => setShowResults(false)}>
           <div className="search-bar-container">
-            <SearchBar setFilteredData = {setFilteredData} />
-            <SearchBarResults filteredData = {filteredData} />
+            <SearchBar setFilteredData = {setFilteredData} setInputData = {setInputData} />
+            <SearchBarResults filteredData = {filteredData} inputData = {inputData}  />
           </div>
        </div>
      );

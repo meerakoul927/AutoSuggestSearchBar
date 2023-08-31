@@ -1,22 +1,32 @@
 import React from 'react';
 import './_SearchBarResults.scss';
-import SearchResults from '../SearchResults/SearchResults';
+import data from '../../data/data.json';
+import SearchBarLocation from '../SearchBarLocation/SearchBarLocation';
+import SearchBarHotel from '../SearchBarHotels/SearchBarHotel';
 
 export default function SearchBarResults(props) {
 
   const filteredData = props.filteredData;
-  console.log(filteredData);
+  const inputData = props.inputData;
+  const showResults = props.showResults;
+  const filteredLocation = data.hotels.filter((hotel,index,self) => {
+    return (
+      hotel.address.toLowerCase().includes(inputData) &&
+      self.findIndex((h) => h.address.toLowerCase() === hotel.address.toLowerCase()) === index
+    );
+  });
+  
 
   return (
+    
     <div className="filtered-result-list">
         
-         {
-          <h1> Hotels </h1> && 
-           filteredData.map((result) => {
-              return <div><SearchResults result = {result} /></div>
-          })
-         }
-        
+   
+   
+      <SearchBarLocation filteredLocation = { filteredLocation }/>
+      <SearchBarHotel filteredData = {filteredData} />
+     
+    
     </div>
   )
 }
