@@ -8,7 +8,7 @@ export default function SearchBarResults(props) {
 
   const filteredData = props.filteredData;
   const inputData = props.inputData;
-  const showResults = props.showResults;
+ 
   const filteredLocation = data.hotels.filter((hotel,index,self) => {
     return (
       hotel.address.toLowerCase().includes(inputData) &&
@@ -21,9 +21,7 @@ export default function SearchBarResults(props) {
     
     <div className="filtered-result-list">
         
-   
-   
-      <SearchBarLocation filteredLocation = { filteredLocation }/>
+   <SearchBarLocation filteredLocation = { filteredLocation }/>
       <SearchBarHotel filteredData = {filteredData} />
      
     
