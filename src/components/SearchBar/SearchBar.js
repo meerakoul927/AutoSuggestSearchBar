@@ -1,41 +1,43 @@
 import React, { useState } from 'react';
-import'./_SearchBar.scss';
+import './_SearchBar.scss';
 import { FaSearch } from 'react-icons/fa';
-import  data  from '../../data/data.json';
+import data from '../../data/data.json';
 
-export default function SearchBar() {
-  const [input , setInput] = useState("");
-   console.log(input);
+export default  function SearchBar({setFilteredData}) {
 
-   const handleInputChange =  (event) => {
-    const newItem = event.target.value;
-    setInput(newItem);
-    console.log(input);
+ 
+  const [input, setInput] = useState("");
+
+
+  const handleInputChange = (e) => {
+    const output = e.target.value.toLowerCase();
+     setInput(output);
+    
+     const filteredHotels = data.hotels.filter((hotel) => {
+      return (
+        hotel.title.toLowerCase().includes(output) ||
+        hotel.address.toLowerCase().includes(output)
+      );
+    });
+    
+    setFilteredData(filteredHotels);
   };
 
-
- const fetchData = (input) =>{
-  const filteredData = data.filter((el) => {
-    //if no input the return the original
-    if (input === '') {
-        return el;
-    }
-    //return the item which contains the user input
-    else {
-        return el.title.includes(input);
-    }
-})
-     return filteredData;
- }
+  
 
   return (
     <div className="input-wrapper">
-        <FaSearch id="search-icon"/>
-
-        <input type="text" 
+      <FaSearch id="search-icon" />
+      <input
+        type="text"
+        value={input}
         placeholder = "Enter Location , City , Landmark..."
-        value={input} onChange={handleInputChange} />
-       
+        onChange={handleInputChange} 
+      />
+      
+      
     </div>
-  )
+  );
 }
+
+

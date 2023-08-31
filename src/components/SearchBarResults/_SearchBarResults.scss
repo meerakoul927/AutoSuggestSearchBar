@@ -1,0 +1,25 @@
+@import '../../_index.scss';
+.filtered-result-list{
+      
+     width:100%;
+     background-color: #ffffff;
+     display:flex;
+     flex-direction: column;
+     box-shadow:0px 0px 8px #ddd;
+     border-radius:10px;
+     overflow-y:scroll;
+     margin-top:0.5rem;
+     
+
+     div{
+           display:flex;
+           gap:1rem;
+           padding:10px 20px;
+
+           &:hover{
+               background-color:#efefef;
+           }
+          
+     }
+
+}

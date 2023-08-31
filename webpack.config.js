@@ -21,11 +21,20 @@ module.exports = {
  module: {
     rules: [
       {
-        test: /\.js$/, 
+        test: /\.(js|jsx)$/, 
+        include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', {
+                "targets": "defaults" 
+              }],
+              '@babel/preset-react'
+            ]
+          }
+        }]
       },
       {
         test: /\.s[ac]ss$/i,
