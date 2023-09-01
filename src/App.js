@@ -3,14 +3,14 @@ import './_App.scss';
 import SearchBar from './components/SearchBar/SearchBar.js';
 import SearchBarResults from './components/SearchBarResults/SearchBarResults';
 export default function App(){
-
-   const [filteredData , setFilteredData] = useState([]);
+   
    const [inputData ,    setInputData] = useState([]);
+   const [ actualData ,  setActualData]  = useState("");
    return(
-       <div className="App" onClick={() => setShowResults(false)}>
+       <div className="App" >
           <div className="search-bar-container">
-            <SearchBar setFilteredData = {setFilteredData} setInputData = {setInputData} />
-            <SearchBarResults filteredData = {filteredData} inputData = {inputData}  />
+             <SearchBar  setInputData = {setInputData}  setActualData = {setActualData} />
+             {actualData.trim() != '' && <SearchBarResults inputData = {inputData}  /> }
           </div>
        </div>
      );

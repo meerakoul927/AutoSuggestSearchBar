@@ -4,7 +4,7 @@ export default function SearchBarHotel({filteredData}) {
   return (
     <>
     {
-        filteredData.length>0 && <h4 className="location_title">Hotels</h4>
+        filteredData.length>0 && <p className="location_title">Hotels</p>
      }
     {
               filteredData.map((result) => {

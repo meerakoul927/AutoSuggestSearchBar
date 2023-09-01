@@ -1,5 +1,7 @@
+@import '../../_App.scss';
+
 .search_location_div{
-     border-bottom: 1px solid #eee;
+     border-bottom: 1px solid $color-grey;
      width:100%;
      display:flex;
      
@@ -8,6 +10,6 @@
         font-size: 14px;
      }
     &:hover{
-         background-color: #eee;
+         background-color: $color-grey;
     }
 }

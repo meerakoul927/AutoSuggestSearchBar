@@ -1,31 +1,19 @@
 import React, { useState } from 'react';
 import './_SearchBar.scss';
 import { FaSearch } from 'react-icons/fa';
-import data from '../../data/data.json';
 
-export default  function SearchBar({setFilteredData , setInputData}) {
 
- 
+export default  function SearchBar({ setInputData ,  setActualData }) {
+
   const [input, setInput] = useState("");
-
-
   const handleInputChange = (e) => {
     const output = e.target.value;
      setInput(output);
+     setActualData(output.toLowerCase())
      setInputData(output.toLowerCase());
-     const filteredHotels = data.hotels.filter((hotel) => {
-      return (
-        hotel.title.toLowerCase().includes(output.toLowerCase()) ||
-        hotel.address.toLowerCase().includes(output.toLowerCase())
-      );
-    });
-    
-    setFilteredData(filteredHotels);
-  };
+    };
 
-  
-
-  return (
+return (
     <div className="input-wrapper">
       <FaSearch id="search-icon" />
       <input
@@ -34,8 +22,6 @@ export default  function SearchBar({setFilteredData , setInputData}) {
         placeholder = "Enter Location , City , HotelName ..."
         onChange={handleInputChange} 
       />
-      
-      
     </div>
   );
 }

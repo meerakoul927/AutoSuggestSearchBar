@@ -15,6 +15,12 @@
         display:flex;
         gap:1rem;
         padding:10px 20px;
-     }
-
+    }
+    .no_data{
+        width:100%;
+        padding:12px 20px;
+        background-color:#efefef;
+        font-weight:bold;
+        font-size: 14px;
+    } 
 }

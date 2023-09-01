@@ -9,18 +9,19 @@
      display:flex;
      align-items: center;
 
+     #search-icon{
+          color:royalblue;
+     }
+
      input{
           background-color:transparent;
           border:none;
           font-size:1.10rem;
           width:100%;
           margin-left:25px;
-          
+        
           &:focus{
                outline:none;
           }
-     }
-     #search-icon{
-          color:royalblue;
      }
 }

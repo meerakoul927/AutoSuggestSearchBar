@@ -1,8 +1,9 @@
 @import './_index.scss';
 
+$color-grey: #eee;
 
 .App{
-      background-color:#eee;
+      background-color:$color-grey;
       height:100vh;
       width:100vw;
       overflow-y: auto;

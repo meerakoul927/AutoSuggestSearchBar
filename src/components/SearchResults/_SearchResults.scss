@@ -1,9 +1,9 @@
-
-
+@import '../../_App.scss';
 
 .search_hotels_div{
       display:flex;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid $color-grey;
+      
       width:100%;
 
       p{
@@ -17,6 +17,6 @@
         }
       }
       &:hover{
-        background-color: #eee;
+        background-color: $color-grey;
    }
 }
