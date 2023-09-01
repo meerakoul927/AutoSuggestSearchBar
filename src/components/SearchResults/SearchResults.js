@@ -1,5 +1,5 @@
 import React from 'react'
-import { LuHotel } from 'react-icons/Lu';
+import { LuHotel } from 'react-icons/lu';
 import './_SearchResults.scss';
 
 export default function SearchResults({ result }) {

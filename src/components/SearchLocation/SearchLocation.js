@@ -1,5 +1,5 @@
 import React from 'react';
-import {MdLocationPin} from 'react-icons/Md';
+import {MdLocationPin} from 'react-icons/md';
 import './_SearchLocation.scss';
 
 export default function SearchLocation({output}) {
