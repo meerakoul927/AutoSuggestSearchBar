@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './_SearchBar.scss';
 import { FaSearch } from 'react-icons/fa';
 
-
-export default  function SearchBar({ setInputData ,  setActualData }) {
-
-  const [input, setInput] = useState("");
+export default function SearchBar({ onSearchChange }) {
   const handleInputChange = (e) => {
-    const output = e.target.value;
-     setInput(output);
-     setActualData(output.toLowerCase())
-     setInputData(output.toLowerCase());
-    };
+    const inputValue = e.target.value;
+    onSearchChange(inputValue); // Send the search value to the parent component (App.js)
+  };
 
-return (
+  return (
     <div className="input-wrapper">
       <FaSearch id="search-icon" />
       <input
         type="text"
-        value={input}
-        placeholder = "Enter Location , City , HotelName ..."
-        onChange={handleInputChange} 
+        placeholder="Enter Location, City, Hotel Name ..."
+        onChange={handleInputChange}
       />
     </div>
   );

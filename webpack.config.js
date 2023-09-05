@@ -19,6 +19,15 @@ module.exports = {
     minimize: true, // Enable minification
     minimizer: [new TerserPlugin()], // Use TerserPlugin for minification
   },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001', // Replace with your Node.js server's URL
+        changeOrigin: true, // Add this option to handle CORS
+      },
+    },
+  },
+
  module: {
     rules: [
       {
